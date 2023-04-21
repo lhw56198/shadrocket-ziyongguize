@@ -176,8 +176,8 @@ dns:
 
   # 当 fallback 参数被配置时, DNS 请求将同时发送至上方 nameserver 列表和下方 fallback 列表中配置的所有 DNS 服务器.
   # 当解析得到的 IP 地址的地理位置不是 CN 时，clash 将会选用 fallback 中 DNS 服务器的解析结果。
-fallback:
-  - https://dns.google/dns-query
+#fallback:
+#  - https://dns.google/dns-query
 
   # 如果使用 nameserver 列表中的服务器解析的 IP 地址在下方列表中的子网中，则它们被认为是无效的，
   # Clash 会选用 fallback 列表中配置 DNS 服务器解析得到的结果。
@@ -210,22 +210,7 @@ proxies:
 
   # vmess
   # 支持加密方式：auto / aes-128-gcm / chacha20-poly1305 / none
-    - {name: armbian, server: centos.lhw0206.top, port: 23254, type: vmess, uuid: 1d51e84b-54e6-467f-ecc8-0b0fb4baecc2, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true}
-    - 
-        name: 【校园】IPv6节点丨81
-        type: vmess
-        server: v6126.75qy.cn
-        port: 9981
-        uuid: cd88948a-9f4b-45fe-a5ee-081c4b8f1837
-        alterId: 0
-        cipher: auto
-        udp: true
-        network: ws
-        ws-opts:
-            path: /
-            headers:
-                Host: www.baidu.com
-    - {name: azure, server: 2603:1040:401:5::21, port: 19765, type: vmess, uuid: a7507b65-f6f0-4c62-cd87-36486d8bc69d, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true}
+   
 proxy-groups:
   - name: PROXY
     type: select
